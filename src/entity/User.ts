@@ -1,9 +1,9 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+import { Entity, PrimaryColumn, Column } from "typeorm";
 
 //TODO Crie a entidade de User
-@Entity()
+@Entity('user')
 export class User {
-  @PrimaryGeneratedColumn()
+  @PrimaryColumn()
   id: number
 
   @Column()

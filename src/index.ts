@@ -36,6 +36,7 @@ initializeDatabase();
 app.post('/users', async (req, res) => {
 // Crie o endpoint de users
   const user = AppDataSource.getRepository(User).create(req.body)
+
   const result = await AppDataSource.getRepository(User).save(user)
 
   return res.send(result)
@@ -45,14 +46,14 @@ app.post('/posts', async (req, res) => {
 // Crie o endpoint de posts
   
   const post = AppDataSource.getRepository(Post).create(req.body)
+  
+  // const user = AppDataSource.getRepository(User).findOneBy({
+  //   id: post[0].userId
+  // })
 
-  const user = AppDataSource.getRepository(User).findOneBy({
-    id: post[0].userId
-  })
-
-  if(!user){
-    return null
-  }
+  // if(!user){
+  //   return null
+  // }
 
   const result = await AppDataSource.getRepository(Post).save(post)
 

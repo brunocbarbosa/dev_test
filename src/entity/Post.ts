@@ -1,11 +1,14 @@
-import { Entity, Column, JoinColumn, OneToOne, PrimaryColumn } from "typeorm";
+import { Entity, Column, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { User } from "./User"
 
 //TODO Crie a entidade de Post
-@Entity('posts')
+@Entity('post')
 export class Post {
-  @PrimaryColumn()
-  title : number
+  @PrimaryGeneratedColumn()
+  id : number
+
+  @Column()
+  title : string
 
   @Column()
   description : string

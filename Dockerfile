@@ -1,4 +1,3 @@
-#TODO Configure o Dockerfile
 FROM node:20.16.0-alpine3.20
 
 WORKDIR /usr/src/app
@@ -10,6 +9,7 @@ RUN npm install
 COPY . .
 
 RUN npm run build
+RUN npm install --production
 
 EXPOSE 3000
 

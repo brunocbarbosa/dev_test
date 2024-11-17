@@ -4,13 +4,13 @@ import { User } from "./User"
 //TODO Crie a entidade de Post
 @Entity('post')
 export class Post {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('increment')
   id : number
 
-  @Column()
+  @Column({ name: 'title',  length: 100, nullable: false })
   title : string
 
-  @Column()
+  @Column({ name: 'description',  length: 100, nullable: false })
   description : string
 
   @JoinColumn({ name: 'id' })
